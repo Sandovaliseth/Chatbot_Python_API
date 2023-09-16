@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emoji-mart/3.0.0/emoji-mart.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emoji-mart/3.0.0/emoji-mart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-title-container">
+                <h1 class="chat-title">Chatbot</h1>
+            </div>
+            <div class="chat-messages">
+                <div class="message chatbot-message">
+                    <div class="message-content">
+                        ¡Hola! Soy un chatbot. ¿En qué puedo ayudarte?
+                        <div class="message-time">
+                            {% if current_time %}
+                                {{ current_time }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="avatar-chat-container">
+                        <img src="../static/images/chatbot.png" alt="Chatbot Avatar" class="avatar-chat">
+                    </div>
+                </div>
+                {% if user_message %}
+                <div class="message user-message">
+                    <div class="avatar-user-container">
+                        <img src="../static/images/avatar.png" alt="User Avatar" class="avatar-user">
+                    </div>
+                    <div class="message-content">
+                        {{ user_message }}
+                        <div class="message-time">
+                            {% if current_time %}
+                                {{ current_time }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if chatbot_response %}
+                <div class="message chatbot-message">
+                    <div class="message-content">
+                        {{ chatbot_response }}
+                        <div class="message-time">
+                            {{ current_time }}
+                        </div>
+                    </div>
+                    <div class="avatar-chat-container">
+                        <img src="../static/images/chatbot.png" alt="Chatbot Avatar" class="avatar-chat">
+                    </div>
+                </div>
+                {% endif %}
+            </div> 
+            <div class="chat-input">
+                <input type="text" name="user-input" id="user-input" placeholder="Escribe un mensaje...">
+                <button id="send-button">Enviar</button>
+                <button id="emoji-button">😀</button>
+                <div id="emoji-container"></div>                
+            </div>
+        </div>
+        <div class="welcome-container">
+            <div class="welcome-section">
+              <h2 class="welcome-title">BIENVENIDOS A MI CHATBOT</h2>
+              <p class="welcome-message">Aquí puedes obtener respuestas a tus preguntas.</p>
+              <div class="images-and-animated">
+                <div class="images">
+                  <div class="image">
+                    <img src="../static/images/chatbot_1.png" alt="chatbot_1" class="chatbot_1">
+                  </div>
+                  <div class="image">
+                    <img src="../static/images/chatbot_2.png" alt="chatbot_2" class="chatbot_2">
+                  </div>
+                  <div class="image">
+                    <img src="../static/images/chatbot_3.png" alt="chatbot_3" class="chatbot_4">
+                  </div>
+                </div>
+                <div class="animated-images">
+                  <div class="animated-image"></div>
+                  <div class="animated-image"></div>
+                </div>
+              </div>
+            </div>
+            <div class="footer">
+                <h2>Presentado por: 🧐</h2>
+                <p>Juan José Rojas Perez</p>
+                <p>Liseth Sandoval Perez</p>
+            </div>
+          </div>          
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
