@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # Configura la API de OpenAI
-openai.api_key = ""
+openai.api_key = "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"
 model_engine = "text-davinci-003"
 
 # Ruta principal
@@ -13,7 +13,7 @@ def index():
     if request.method == "POST":
         # Obtener el mensaje del usuario
         user_message = request.form["user-input"]
-
+#
         # Llamar a la API de OpenAI para obtener la respuesta
         response = openai.Completion.create( engine=model_engine,
                                             prompt=user_message,
